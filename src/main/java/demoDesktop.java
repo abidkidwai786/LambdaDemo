@@ -17,6 +17,15 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import org.apache.commons.codec.binary.Base64;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URL;
+
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.net.MalformedURLException;
