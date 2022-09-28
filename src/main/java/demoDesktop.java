@@ -32,7 +32,7 @@ public class demoDesktop {
     public String username = System.getenv("LT_USERNAME");
     public String accesskey = System.getenv("LT_ACCESS_KEY");
     public RemoteWebDriver driver;
-    public String gridURL = "hub.lambdatest.com";
+    public String gridURL = "hub-ohio.lambdatest.com";
     String status;
     String hub;
     SessionId sessionId;
@@ -84,20 +84,35 @@ public class demoDesktop {
     @Test
     public void DesktopScript() {
         try {
-            driver.get("https://lambdatest.github.io/sample-todo-app/");
-            WebDriverWait wait = new WebDriverWait(driver, 30);
-            WebElement firstItem;
-            firstItem = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div > div > div > ul > li:nth-child(1) > input")));
-            WebElement secondItem = driver.findElement(By.cssSelector("body > div > div > div > ul > li:nth-child(2) > input"));
-            WebElement thirdItem = driver.findElement(By.cssSelector("body > div > div > div > ul > li:nth-child(4) > input"));
-            WebElement fifthElement = driver.findElement(By.cssSelector("body > div > div > div > ul > li:nth-child(5) > input"));
-            firstItem.click();
-            secondItem.click();
-            thirdItem.click();
-            fifthElement.click();
-            driver.findElement(By.xpath("//*[@id=\"sampletodotext\"]")).sendKeys("new item added");
-            driver.findElement(By.xpath("//*[@id=\"addbutton\"]")).isDisplayed();
-            driver.findElement(By.xpath("//*[@id=\"addbutton\"]")).click();
+ driver.get("https://testfiledownload.com/");
+        Thread.sleep(4000);
+
+        driver.manage().window().maximize();
+        Thread.sleep(4000);
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,400)", "");
+
+
+
+        driver.findElementByXPath("//*[@id=\"main\"]/article/div/div[1]/div[1]/div[3]/a").click();
+        Thread.sleep(3000);
+        driver.get("chrome://downloads/");
+        Thread.sleep(300000);
+
+
+
+
+// Download file from remote to local machine
+        String base64EncodedFile = ((JavascriptExecutor) driver).executeScript("lambda-file-content=1GB.bin").toString(); // file content download
+        byte[] byteArray = Base64.decodeBase64(base64EncodedFile.getBytes());
+//creates a file on your local system
+        FileOutputStream fos;
+        File file=new File("D:\\Code Stuff\\Test1\\trepp\\1GB.bin");
+        fos = new FileOutputStream(file);
+        fos.write(byteArray);
+        fos.close();
+        System.out.println(fos);
             status="passed";
         } catch (Exception e) {
 
