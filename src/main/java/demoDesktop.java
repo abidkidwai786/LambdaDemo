@@ -54,11 +54,16 @@ public class demoDesktop {
         try {
 
             DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("build", "DesktopDemo 2");
+            caps.setCapability("build", "DesktopDemo 3");
             caps.setCapability("name", "ToDO");
-            caps.setCapability("platform", platform);
-            caps.setCapability("browserName", browser);
-            caps.setCapability("version", version);
+            caps.setCapability("platform", "Windows 10");
+            caps.setCapability("browserName", "Chrome");
+            caps.setCapability("version", "80.0");
+            caps.setCapability("resolution", "1920x1080");
+            caps.setCapability("geoLocation","US");
+            caps.setCapability("idleTimeout","600");
+            caps.setCapability("acceptSslCerts", true);
+            caps.setCapability("acceptInsecureCerts", true);
             caps.setCapability("network", true);
             caps.setCapability("visual", true);
             caps.setCapability("console", true);
