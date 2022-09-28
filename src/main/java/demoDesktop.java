@@ -54,7 +54,7 @@ public class demoDesktop {
         try {
 
             DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("build", "DesktopDemo 1");
+            caps.setCapability("build", "DesktopDemo 2");
             caps.setCapability("name", "ToDO");
             caps.setCapability("platform", platform);
             caps.setCapability("browserName", browser);
@@ -106,8 +106,6 @@ public class demoDesktop {
 
 
         driver.findElementByXPath("//*[@id=\"main\"]/article/div/div[1]/div[1]/div[3]/a").click();
-        Thread.sleep(3000);
-        driver.get("chrome://downloads/");
         Thread.sleep(300000);
 
 
