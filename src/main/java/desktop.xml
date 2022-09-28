@@ -5,17 +5,9 @@
 
     <test name="Win10">
         <parameter name="browser" value="Chrome"/>
-        <parameter name="version" value="75.0"/>
+        <parameter name="version" value="80.0"/>
         <parameter name="platform" value="Win10"/>
 
-        <classes>
-            <class name="demoDesktop"/>
-        </classes>
-    </test>
-    <test name="Mac">
-        <parameter name="browser" value="Safari"/>
-        <parameter name="version" value="12.0"/>
-        <parameter name="platform" value="Macos Mojave"/>
         <classes>
             <class name="demoDesktop"/>
         </classes>
