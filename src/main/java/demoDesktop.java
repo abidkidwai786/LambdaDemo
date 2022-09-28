@@ -54,7 +54,7 @@ public class demoDesktop {
         try {
 
             DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("build", "DesktopDemo");
+            caps.setCapability("build", "DesktopDemo 1");
             caps.setCapability("name", "ToDO");
             caps.setCapability("platform", platform);
             caps.setCapability("browserName", browser);
@@ -62,7 +62,6 @@ public class demoDesktop {
             caps.setCapability("network", true);
             caps.setCapability("visual", true);
             caps.setCapability("console", true);
-            caps.setCapability("headless", true);
 
             StopWatch driverStart = new StopWatch();
             driverStart.start();
