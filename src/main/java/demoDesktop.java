@@ -41,7 +41,7 @@ public class demoDesktop {
     public String username = System.getenv("LT_USERNAME");
     public String accesskey = System.getenv("LT_ACCESS_KEY");
     public RemoteWebDriver driver;
-    public String gridURL = "hub-ohio.lambdatest.com";
+    public String gridURL = "hub-beta.lambdatest.com";
     String status;
     String hub;
     SessionId sessionId;
@@ -60,8 +60,7 @@ public class demoDesktop {
             caps.setCapability("browserName", browser);
             caps.setCapability("version", version);
             caps.setCapability("resolution", "1920x1080");
-            caps.setCapability("geoLocation","US");
-            caps.setCapability("idleTimeout","600");
+            caps.setCapability("idleTimeout","1800");
             caps.setCapability("acceptSslCerts", true);
             caps.setCapability("acceptInsecureCerts", true);
 
@@ -107,7 +106,7 @@ public class demoDesktop {
 
 
 
-        driver.findElementByXPath("//*[@id=\"main\"]/article/div/div[1]/div[1]/div[3]/a").click();
+        driver.findElementByXPath("//*[@id="main"]/article/div/div[1]/div[1]/div[4]/a").click();
         Thread.sleep(300000);
 
 
