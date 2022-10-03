@@ -107,7 +107,7 @@ public class demoDesktop {
 
 
         driver.findElementByXPath("//*[@id=\"main\"]/article/div/div[1]/div[1]/div[3]/a").click();
-        Thread.sleep(300000);
+        Thread.sleep(450000);
 
 
 
