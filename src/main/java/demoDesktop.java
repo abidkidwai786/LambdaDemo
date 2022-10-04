@@ -54,8 +54,8 @@ public class demoDesktop {
         try {
 
             DesiredCapabilities caps = new DesiredCapabilities();
-            caps.setCapability("build", "DesktopDemo 4");
-            caps.setCapability("name", "ToDO");
+            caps.setCapability("build", "Trepp Issue reproduce Jenkins");
+            caps.setCapability("name", "Test 1");
             caps.setCapability("platform", platform);
             caps.setCapability("browserName", browser);
             caps.setCapability("version", version);
@@ -93,38 +93,60 @@ public class demoDesktop {
     @Test
     public void DesktopScript() {
         try {
- driver.get("https://testfiledownload.com/");
-        Thread.sleep(4000);
+//         driver.get("https://testfiledownload.com/");
+//         Thread.sleep(4000);
 
-        driver.manage().window().maximize();
-        Thread.sleep(4000);
+//         driver.manage().window().maximize();
+//         Thread.sleep(4000);
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,400)", "");
+//         JavascriptExecutor js = (JavascriptExecutor) driver;
+//         js.executeScript("window.scrollBy(0,400)", "");
             
-         Thread.sleep(4000);
+//          Thread.sleep(4000);
 
 
 
-        driver.findElementByXPath("//*[@id=\"main\"]/article/div/div[1]/div[1]/div[3]/a").click();
-        Thread.sleep(450000);
+//         driver.findElementByXPath("//*[@id=\"main\"]/article/div/div[1]/div[1]/div[3]/a").click();
+//         Thread.sleep(450000);
+            
+          driver.get("https://treppftp.ftptoday.com/");
+
+
+          driver.manage().window().maximize();
+          Thread.sleep(4000);
+
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollBy(0,400)", "");
+
+
+        driver.findElementById("u").sendKeys("trepp-qa\n");
+        Thread.sleep(4000);
+        driver.findElementById("p").sendKeys("TreppWelcome7!\n");
+        Thread.sleep(4000);
+        driver.findElementByXPath("//*[@id=\"gfiles-grid-table\"]/tbody/tr[7]/td[12]").click();
+        Thread.sleep(4000);
+        driver.findElementByXPath("//*[@id=\"gfiles-grid-table\"]/tbody/tr[7]/td[3]/a").click();
 
 
 
-
+        Thread.sleep(4000);
+        driver.get("chrome://downloads/");
+        Thread.sleep(300000);
+        System.out.println("Before Lambda file content done");    
 // Download file from remote to local machine
-        String base64EncodedFile = ((JavascriptExecutor) driver).executeScript("lambda-file-content=1GB.bin").toString(); // file content download
+        String base64EncodedFile = ((JavascriptExecutor) driver).executeScript("lambda-file-content=feed_014.zip").toString(); // file content download
         byte[] byteArray = Base64.decodeBase64(base64EncodedFile.getBytes());
 //creates a file on your local system
         FileOutputStream fos;
-        File file=new File("D:\\Code Stuff\\Test1\\trepp\\1GB.bin");
+        File file=new File("D:\\Code Stuff\\Test1\\trepp\\feed_014_1.zip");
         fos = new FileOutputStream(file);
         fos.write(byteArray);
         fos.close();
         System.out.println(fos);
             status="passed";
-        } catch (Exception e) {
-
+        } 
+        catch (Exception e) 
+        {
             System.out.println(e);
             status = "failed";
         }
