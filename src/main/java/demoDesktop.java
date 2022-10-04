@@ -41,8 +41,8 @@ public class demoDesktop {
     public String username = System.getenv("LT_USERNAME");
     public String accesskey = System.getenv("LT_ACCESS_KEY");
     public RemoteWebDriver driver;
-    public String gridURL = "hub-beta.lambdatest.com";
-    String status;
+    public String gridURL = "hub.lambdatest.com";
+    String status="failed";
     String hub;
     SessionId sessionId;
 
@@ -148,7 +148,6 @@ public class demoDesktop {
         catch (Exception e) 
         {
             System.out.println(e);
-            status = "failed";
         }
     }
 
