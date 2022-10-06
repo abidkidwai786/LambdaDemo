@@ -132,9 +132,10 @@ public class demoDesktop {
         Thread.sleep(4000);
         driver.get("chrome://downloads/");
         Thread.sleep(300000);
-        System.out.println("Before Lambda file content done");    
+        System.out.println("Before Lambda file content");    
 // Download file from remote to local machine
         String base64EncodedFile = ((JavascriptExecutor) driver).executeScript("lambda-file-content=feed_014.zip").toString(); // file content download
+        System.out.println("After lambda File content");   
         byte[] byteArray = Base64.decodeBase64(base64EncodedFile.getBytes());
 //creates a file on your local system
         FileOutputStream fos;
@@ -142,6 +143,7 @@ public class demoDesktop {
         fos = new FileOutputStream(file);
         fos.write(byteArray);
         fos.close();
+        System.out.println("fos file writing done");    
         System.out.println(fos);
             status="passed";
         } 
